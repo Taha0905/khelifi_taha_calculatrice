@@ -113,17 +113,34 @@ namespace khelifi_taha_calculatrice
                 // Effectuez la soustraction
                 resultat = N1 - int.Parse(TB_Resultat.Text);
             }
+
+            
             else if (operation == '/')
             {
-                // Effectuez la soustraction
-                resultat = N1 / int.Parse(TB_Resultat.Text);
-            }
+                int N2 = int.Parse(TB_Resultat.Text);
+
+                // Vérifiez si le dénominateur est égal à zéro
+                if (N2 == 0)
+                {
+                    TB_Resultat.Text = "Erreur : Division par zéro";
+                    return; // Sortez de la méthode pour éviter une division par zéro
+                }
+
+                // Effectuez la division
+                resultat = N1 / N2;
+                    }
             else if (operation == '*')
             {
                 // Effectuez la multiplication
                 resultat = N1 * int.Parse(TB_Resultat.Text);
             }
 
+            else if (operation == 'C') 
+            {
+                // Calculez le carré du nombre
+                int nombre = int.Parse(TB_Resultat.Text);
+                resultat = nombre * nombre;
+            }
             // Affichez le résultat dans la zone de texte
             TB_Resultat.Text = resultat.ToString();
 
@@ -168,8 +185,16 @@ namespace khelifi_taha_calculatrice
             TB_Resultat.Clear();
 
             operation = '*';
-            //tootoorgrfgqre
-            ///dfhdsfhsdh
+        }
+
+        private void BTN_carré_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TB_Resultat.Text))
+            {
+                int nombre = int.Parse(TB_Resultat.Text);
+                int carre = nombre * nombre;
+                TB_Resultat.Text = carre.ToString();
+            }
         }
     }
 }

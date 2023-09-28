@@ -46,6 +46,17 @@
                     </Style>
                 </Style.Resources>
             </Style>
+            <Style x:Key="MyStyle2" TargetType="{x:Type Control}">
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Background" Value="Purple"/>
+                <Setter Property="FontSize" Value="38"/>
+                <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
         </Grid.Resources>
 
         <TextBox Grid.Row="0" Grid.ColumnSpan="4" Name="TB_Resultat" Background="#FF4B6741" BorderBrush="#FF0C0C0C" BorderThickness="20,20,20,20" FontSize="24" FontWeight="Bold"></TextBox>
@@ -63,9 +74,10 @@
         <Button Grid.Row="3" Grid.Column="3" Name="BTN_Fois" Content="*" Style="{StaticResource MyStyle}" Click="BTN_Fois_Click"></Button>
         <Button Grid.Row="4" Grid.Column="0" Name="BTN_0" Content="0" Click="BTN_0_Click"></Button>
         <Button Grid.Row="4" Grid.Column="1" Name="BTN_CLR" Content="CLR" Background="#FFC71B1B" Click="BTN_CLR_Click"></Button>
-        <Button Grid.Row="4" Grid.Column="2" Name="BTN_Egale" Content="=" Background="#FF5FEBF5" Click="BTN_Egale_Click"></Button>
+        <Button Grid.Row="5" Grid.Column="3" Name="BTN_Egale" Content="=" Background="#FF5FEBF5" Click="BTN_Egale_Click"></Button>
         <Button Grid.Row="4" Grid.Column="3" Name="BTN_Diviser" Content="/" Style="{StaticResource MyStyle}" Click="BTN_Diviser_Click"></Button>
-        <Button Grid.Row="5" Grid.Column="0" Name="BTN_carré" Content="x²"></Button>
+        <Button Grid.Row="5" Grid.Column="0" Name="BTN_carré" Style="{StaticResource MyStyle2}" Content="x²" Click="BTN_carré_Click"></Button>
+        <Button Grid.Row="5" Grid.Column="1" Name="BTN_racine" Style="{StaticResource MyStyle2}" Content="√" Click="BTN_carré_Click"></Button>
     </Grid>
         
 </Window>
