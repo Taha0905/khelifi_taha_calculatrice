@@ -129,18 +129,18 @@ namespace khelifi_taha_calculatrice
 
         }
 
+        //boutton moins
         private void BTN_Moins_Click(object sender, RoutedEventArgs e)
         {
-            // Stockez la valeur actuelle dans N1
+
             N1 = int.Parse(TB_Resultat.Text);
 
-            // Effacez la zone de texte pour permettre à l'utilisateur d'entrer un nouveau nombre
             TB_Resultat.Clear();
 
-            // Stockez l'opération de soustraction
             operation = '-';
         }
 
+        //boutton diviser
         private void BTN_Diviser_Click(object sender, RoutedEventArgs e)
         {
             N1 = int.Parse(TB_Resultat.Text);
@@ -149,6 +149,8 @@ namespace khelifi_taha_calculatrice
 
             operation = '/';
         }
+
+        //boutton plus
         private void BTN_Plus_Click(object sender, RoutedEventArgs e)
         {
             N1 = int.Parse(TB_Resultat.Text);
@@ -158,6 +160,7 @@ namespace khelifi_taha_calculatrice
             operation = '+';
         }
 
+        //boutton fois
         private void BTN_Fois_Click(object sender, RoutedEventArgs e)
         {
             N1 = int.Parse(TB_Resultat.Text);
@@ -165,6 +168,8 @@ namespace khelifi_taha_calculatrice
             TB_Resultat.Clear();
 
             operation = '*';
+            //tootoorgrfgqre
+            ///dfhdsfhsdh
         }
     }
 }
