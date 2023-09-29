@@ -26,9 +26,9 @@ namespace khelifi_taha_calculatrice
         }
 
         //déclaration des variables
-        int N1 = 0;        
-        int N2 = 0;
-        int resultat = 0;
+        double N1 = 0;
+        double N2 = 0;
+        double resultat = 0;
         char operation = ' ';
 
         //création de la fonction display
@@ -113,8 +113,6 @@ namespace khelifi_taha_calculatrice
                 // Effectuez la soustraction
                 resultat = N1 - int.Parse(TB_Resultat.Text);
             }
-
-            
             else if (operation == '/')
             {
                 int N2 = int.Parse(TB_Resultat.Text);
@@ -128,22 +126,49 @@ namespace khelifi_taha_calculatrice
 
                 // Effectuez la division
                 resultat = N1 / N2;
-                    }
+            }
             else if (operation == '*')
             {
                 // Effectuez la multiplication
                 resultat = N1 * int.Parse(TB_Resultat.Text);
             }
-
-            else if (operation == 'C') 
+            else if (operation == 'C')
             {
                 // Calculez le carré du nombre
                 int nombre = int.Parse(TB_Resultat.Text);
                 resultat = nombre * nombre;
             }
+            // Ajoutez une condition pour gérer la racine carrée
+            else if (operation == 'R')
+            {
+                // Calculez la racine carrée du nombre
+                double nombre = double.Parse(TB_Resultat.Text);
+
+                if (nombre >= 0) // Vérifiez que le nombre est positif ou nul
+                {
+                    double racineCarree = Math.Sqrt(nombre);
+                    TB_Resultat.Text = racineCarree.ToString();
+                    return; // Sortez de la méthode car la racine carrée est calculée
+                }
+                else
+                {
+                    TB_Resultat.Text = "Erreur : Nombre négatif";
+                    return; // Sortez de la méthode en cas de nombre négatif
+                }
+            }
+            // Ajoutez une condition pour gérer le pourcentage
+            else if (operation == 'P')
+            {
+                // Calculez le pourcentage
+                double nombre = double.Parse(TB_Resultat.Text);
+                double pourcentage = N1 * (nombre / 100.0);
+
+                TB_Resultat.Text = pourcentage.ToString();
+                return; // Sortez de la méthode car le pourcentage est calculé
+            }
+
             // Affichez le résultat dans la zone de texte
             TB_Resultat.Text = resultat.ToString();
-
         }
 
         //boutton moins
@@ -196,5 +221,34 @@ namespace khelifi_taha_calculatrice
                 TB_Resultat.Text = carre.ToString();
             }
         }
+
+        private void BTN_racine_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TB_Resultat.Text))
+            {
+                double nombre = double.Parse(TB_Resultat.Text);
+
+                if (nombre >= 0) // Vérifiez que le nombre est positif ou nul
+                {
+                    double racineCarree = Math.Sqrt(nombre);
+                    TB_Resultat.Text = racineCarree.ToString();
+                }
+                else
+                {
+                    TB_Resultat.Text = "Erreur : Nombre négatif";
+                }
+            }
+        }
+
+        private void BTN_pourcentage_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TB_Resultat.Text))
+            {
+                double nombre = double.Parse(TB_Resultat.Text);
+                double pourcentage = N1 * (nombre / 100.0); // Calcule le pourcentage en multipliant le nombre par le pourcentage
+
+                TB_Resultat.Text = pourcentage.ToString();
+            }
+        }
     }
-}//fin
+}
