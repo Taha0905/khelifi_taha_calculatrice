@@ -63,7 +63,7 @@
         <Button Grid.Row="4" Grid.Column="3" Name="BTN_Diviser" Content="/" Click="OperatorButton_Click"/>
         <Button Grid.Row="5" Grid.Column="3" Name="BTN_Egale" Content="=" Click="BTN_Equals_Click" Foreground="Black" Background="#FF48BF21"/>
 
-        <Button Grid.Row="5" Grid.Column="0" Name="BTN_carré" Content="x²" Click="OperatorButton_Click"/>
+        <Button Grid.Row="5" Grid.Column="0" Name="BTN_carré" Content="^" Click="OperatorButton_Click"/>
         <Button Grid.Row="5" Grid.Column="1" Name="BTN_racine" Content="√" Click="OperatorButton_Click"/>
         <Button Grid.Row="5" Grid.Column="2" Name="BTN_pourcentage" Content="%" Click="OperatorButton_Click"/>
         <Button Grid.Row="4" Grid.Column="2" Name="virgule" Content="." Click="BTN_Virgule_Click"/>
